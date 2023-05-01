@@ -48,7 +48,8 @@ jobs:
         docker tag api-rest:latest ${{ secrets.HUB_USERNAME }}/api-rest:latest
         docker push ${{ secrets.HUB_USERNAME }}/api-rest:latest
  
-    #- name: Deploy to EKS
+    - name: Deploy to EKS
+        kubectl apply -f deploy.yml
     #  env:
     #    KUBECONFIG: ${{ secrets.KUBECONFIG }}
     #    IMAGE_TAG: ${{ env.IMAGE_TAG }}
