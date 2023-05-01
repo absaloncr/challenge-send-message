@@ -23,6 +23,9 @@ jobs:
       
     - name: Add pytest
       run: pip install pytest
+      
+    - name: Run test
+      run: pytest -v  
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
