@@ -1,3 +1,5 @@
 # challenge-send-message
 
-Phyton API-REST 
+Languege: Phyton
+Repository: GitHub
+
