@@ -53,6 +53,7 @@ jobs:
         AWS_KUBECONFIG: ${{ secrets.AWS_KUBECONFIG }}
       run: |
         echo "$AWS_KUBECONFIG" > kubeconfig.yaml
+        export KCONFIG=kubeconfig.yaml
         kubectl apply -f deploy.yml
         
 
