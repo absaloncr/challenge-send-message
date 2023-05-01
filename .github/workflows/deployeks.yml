@@ -51,6 +51,7 @@ jobs:
     - name: Deploy to EKS
       env:
         AWS_KUBECONFIG: ${{ secrets.AWS_KUBECONFIG }}
+      run: aws eks update-kubeconfig --name api-rest-deployment
       run: envsubst < deploy.yml | kubectl apply -f -
       #run: |
       #  echo "$AWS_KUBECONFIG" > kubeconfig.yaml
