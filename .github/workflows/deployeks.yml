@@ -50,7 +50,7 @@ jobs:
  
     - name: Deploy to EKS
       run: |
-        echo "$AWS_KUBECONFIG" > | base64 --decode > kubeconfig.yaml
+        echo "$AWS_KUBECONFIG" | base64 --decode > kubeconfig.yaml
         export KCONFIG=kubeconfig.yaml
         envsubst < deploy.yml | kubectl apply -f -
       env:
