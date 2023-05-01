@@ -1,3 +1,5 @@
+FROM python:3.7
+
 WORKDIR /app
 
 COPY requeriments.txt requeriments.txt
