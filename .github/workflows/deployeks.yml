@@ -53,7 +53,7 @@ jobs:
         AWS_KUBECONFIG: ${{ secrets.AWS_KUBECONFIG }}
       run: | 
         aws eks update-kubeconfig --name api-rest-deployment
-        kubectl apply -f deploy.yml
+      # kubectl apply -f deploy.yml
       #run: |
       #  echo "$AWS_KUBECONFIG" > kubeconfig.yaml
       #  export KCONFIG=kubeconfig.yaml
