@@ -18,6 +18,9 @@ jobs:
       with:
         python-version: '3.9' 
         
+    - name: Upgrade pip
+      run: pip install --upgrade pip 
+
     - name: Add flask
       run: python -m pip install flask
       
