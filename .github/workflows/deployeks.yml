@@ -52,16 +52,9 @@ jobs:
         docker push ${{ secrets.HUB_USERNAME }}/api-rest:latest
  
     - name: Deploy to EKS
-      env:
-        AWS_KUBECONFIG: ${{ secrets.AWS_KUBECONFIG }}
       run: |
         aws eks update-kubeconfig --name api-rest-deployment
         envsubst < deploy.yml | kubectl apply -f -
-        kubectl get pods
-      #run: | 
-      #  aws eks update-kubeconfig --name api-rest-deployment
-      #  kubectl apply -f deploy.yml
-      # kubectl get nodes
 
 
         

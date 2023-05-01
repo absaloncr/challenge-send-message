@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: api-rest-deployment
+  name: api-rest
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
         version: v01
     spec:
       containers:
-      - name: api-rest-container
+      - name: api-rest
         image: killgoliat/api-rest:latest
         ports:
         - containerPort: 5000
@@ -28,7 +28,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: api-rest-service
+  name: api-rest
 spec:
   selector:
     app: api-rest
