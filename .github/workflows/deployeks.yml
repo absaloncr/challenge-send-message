@@ -59,7 +59,8 @@ jobs:
       #  aws eks update-kubeconfig --name api-rest-deployment
       #  kubectl apply -f deploy.yml
       # kubectl get nodes
-      
+
+
         
 
 
