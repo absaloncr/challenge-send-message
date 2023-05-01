@@ -1,6 +1,6 @@
 FROM python:3.7
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY requeriments.txt requeriments.txt
 
