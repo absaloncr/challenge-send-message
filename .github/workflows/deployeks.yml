@@ -54,7 +54,7 @@ jobs:
       run: |
         aws eks update-kubeconfig --name api-rest-deployment
         envsubst < deploy.yml | kubectl apply -f -
-         kubectl get nodes
+        kubectl get nodes
       #run: | 
       #  aws eks update-kubeconfig --name api-rest-deployment
       #  kubectl apply -f deploy.yml

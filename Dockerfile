@@ -1,11 +1,14 @@
 FROM python:3.9-slim-buster
 
-WORKDIR /opt/app
+WORKDIR /app
 
-COPY . .
+
+COPY requirements.txt requirements.txt
 
 RUN pip install --no-cache-dir -r requeriments.txt
 
+COPY . .
+
 EXPOSE 5000
 
-CMD ["python", "app.py", "-m", "flask", "run", "--host=0.0.0.0"]
+CMD ["python3", "app.py", "-m", "flask", "run", "--host=0.0.0.0"]
