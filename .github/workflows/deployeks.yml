@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.9' 
-        
+
     - name: Upgrade pip
       run: pip install --upgrade pip 
 
@@ -57,7 +57,7 @@ jobs:
       run: |
         aws eks update-kubeconfig --name api-rest-deployment
         envsubst < deploy.yml | kubectl apply -f -
-        kubectl get nodes
+        kubectl get pods
       #run: | 
       #  aws eks update-kubeconfig --name api-rest-deployment
       #  kubectl apply -f deploy.yml
