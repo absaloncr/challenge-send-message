@@ -49,8 +49,10 @@ jobs:
         docker push ${{ secrets.HUB_USERNAME }}/api-rest:latest
  
     - name: Deploy to EKS
+      env:
+        AWS_KUBECONFIG: ${{ secrets.AWS_KUBECONFIG }}
       run: |
-        echo ${{ secrets.AWS_KUBECONFIG }} | base64 --decode > kubeconfig.yaml
+        echo "$AWS_KUBECONFIG" | base64 --decode > kubeconfig.yaml
         kubectl apply -f deploy.yml
         
 
