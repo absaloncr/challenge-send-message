@@ -52,7 +52,7 @@ jobs:
       env:
         AWS_KUBECONFIG: ${{ secrets.AWS_KUBECONFIG }}
       run: |
-        echo "$AWS_KUBECONFIG" | base64 --decode > kubeconfig.yaml
+        echo "$AWS_KUBECONFIG" > kubeconfig.yaml
         kubectl apply -f deploy.yml
         
 
