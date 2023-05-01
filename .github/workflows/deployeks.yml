@@ -50,7 +50,7 @@ jobs:
  
     - name: Deploy to EKS
       run: |
-        echo ${{ secrets.KUBECONFIG_FILE }} | base64 --decode > kubeconfig.yaml
+        echo ${{ secrets.AWS_KUBECONFIG }} | base64 --decode > kubeconfig.yaml
         kubectl apply -f deploy.yml
         
 
