@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: api-rest-container
-        image: killgoliat/api-rest
+        image: killgoliat/api-rest:latest
         ports:
         - containerPort: 5000
         resources:
@@ -34,6 +34,6 @@ spec:
     app: api-rest
   type: LoadBalancer
   ports:
-  - name: http
+  - protoco: TCP
     port: 80
     targetPort: 5000
