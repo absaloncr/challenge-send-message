@@ -54,7 +54,7 @@ jobs:
       run: |
         echo "$AWS_KUBECONFIG" > kubeconfig.yaml
         export KCONFIG=kubeconfig.yaml
-        kubectl apply -f deploy.yml
+        envsubst < deploy.yml | kubectl apply -f -
         
 
 
