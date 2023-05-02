@@ -18,14 +18,16 @@ The response payload in case the request header and body are sent correctly and 
 To locally test the code you must follow the following steps:
 
 1. Install Python3 if you don't have it and set up the development environment for the language in your IDE
-2. Run a pull of the code from the repository in your local environment
+2. Run a pull of the code from the repository in your local environment (git clone https://github.com/absaloncr/challenge-send-message.git)
 3. Install the requirements indicated in the .txt document (**Flask and Pytest**)
 4. Run the command **python -m flask run** to start the web server built into Flask
 5. Proceed to test the API using a tool like postman or the curl command in your terminal as follows:
 
-**curl -X POST -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "X-JWT-KWY: Bearer" -H "Content-Type: application/json" - d "{\"message\": \"This is a test\", \"to\": \"Juan Perez\", \"from\": \"Rita Asturia\", \"timeToLifeSec\": 45}" ${localdir}/DevOps**
+```
+curl -X POST -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "X-JWT-KWY: Bearer" -H "Content-Type: application/json" -d "{\"message\": \"This is a test\", \"to\": \"Juan Perez\", \"from\": \"Rita Asturia\", \"timeToLifeSec\": 45}" ${LocalDir}/DevOps
 
-**Note**: Remember to replace ${localdir} with your domain and local port (localhost:5000)
+```
+**Note**: Remember to replace ${LocalDir} with your domain and local port (localhost:5000)
 
 ## <sub> Unit Test </sub>
 
@@ -34,7 +36,10 @@ The execution of the tests is executed with the pytest command, this immediately
 ## <sub> Online Test</sub>
 
 To run the online test of the services already set up in an EKS in AWS, we can use the curl command again as follows: </br>
-**curl -X POST -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "X-JWT-KWY: Bearer" -H "Content-Type: application/json" - d "{\"message\": \"This is a test\", \"to\": \"Juan Perez\", \"from\": \"Rita Asturia\", \"timeToLifeSec\": 45}" http://a4f5893fa75e24feaaca63fc93af17f4-767562501.us-east-1.elb.amazonaws.com/DevOps**
+```
+curl -X POST -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "X-JWT-KWY: Bearer" -H "Content-Type: application/json" -d "{\"message\": \"This is a test\", \"to\": \"Juan Perez\", \"from\": \"Rita Asturia\", \"timeToLifeSec\": 45}" http://a4f5893fa75e24feaaca63fc93af17f4-767562501.us-east-1.elb.amazonaws.com/DevOps
+
+```
 
 or use a tool like postman but using the following domain and corresponding endpoint **http://a4f5893fa75e24feaaca63fc93af17f4-767562501.us-east-1.elb.amazonaws.com/DevOps**
 
@@ -59,5 +64,5 @@ Note: The workflow build file is located in the following path: /.github/workflo
 
 # License
 
-Copyright © 2023 Absa;lon Cedeño. All rights reserved.
+Copyright © 2023 Absalon Cedeño. All rights reserved.
 
